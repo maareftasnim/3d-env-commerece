@@ -1,0 +1,19 @@
+
+<nav class="navbar navbar-expand-lg navbar-light ">
+    <a class="navbar-brand" style="color :  rgba(156, 7, 99, 0.747); font-family: Georgia, 'Times New Roman', Times, serif; font-size: 22px; padding-left: 15px;">Moments</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item" *ngIf="! ur.isloggedin()"><a style="color : #258bbe ; text-align: center" class="nav-link" routerLink="/home">Home </a></li>
+        <li class="nav-item" *ngIf="ur.isloggedin()" ><a (click)="navigateMyAccount()" style="color : #258bbe ; text-align: center" class="nav-link">Myaccount</a></li>
+        <li class="nav-item" *ngIf="! ur.isloggedin()"><a style="color : #258bbe ; text-align: center" class="nav-link" routerLink="/register">Register</a></li>
+        <li class="nav-item" *ngIf="! ur.isloggedin()"><a style="color : #258bbe ; text-align: center" class="nav-link" routerLink="/login">login</a></li>
+        <li class="nav-item" *ngIf="ur.isloggedin()"><a style="color : #258bbe ; text-align: center" class="nav-link" routerLink="/post">posts</a></li>
+        <li class="nav-item" *ngIf="ur.isloggedin()"><a style="color : #258bbe ; text-align: center" class="nav-link" routerLink="/add">Add</a></li>
+        <li class="nav-item" *ngIf="ur.isloggedin()"><a (click)="logout()" style="color : #258bbe ; text-align: center" class="nav-link" routerLink="/register">Logout</a></li>
+
+      </ul>
+    </div>
+  </nav>

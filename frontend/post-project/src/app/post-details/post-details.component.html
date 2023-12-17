@@ -1,0 +1,6 @@
+<div *ngIf="postDetails">
+    <h2>{{ postDetails.title }}</h2>
+    <p>{{ postDetails.description }}</p>
+    <img [src]="'http://127.0.0.1:3000/getqrcode/'+ postDetails.qrcode" style="margin-top:5px" alt="Table Setting" width="350" height="400">
+
+  </div>

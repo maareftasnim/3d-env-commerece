@@ -1,0 +1,38 @@
+.navbar{
+    background-color: rgba(255, 255, 255, 0.678);
+    height: 50px;
+    width:100%;
+
+
+}
+.navbar-nav {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-right: 30px;
+  text-align: center;
+  position:absolute;
+  left:40% ;
+  right: 60%;
+
+/*  margin-top: 30px;*/
+}
+
+
+.nav-link{
+    color: white;
+}
+a{
+    font-family: "Times New Roman", Georgia, Serif;
+    font-size: 20px;
+    font-style:bold;
+    color: white;
+    text-align: center;
+    position: flex;
+
+
+
+}
+a :hover{
+background-color: rgba(0, 0, 255, 0.466);
+color: blue;
+}

@@ -1,0 +1,180 @@
+<br />
+<br />
+<div class="container bootstrap snippets bootdey">
+  <div class="panel-body inf-content">
+      <div class="row">
+          <div class="col-md-4">
+              <img alt="" style="width:500px;" title="" class="img-circle img-thumbnail isTooltip" [src]="'http://127.0.0.1:3000/getimage/' + user.image" data-original-title="Usuario"> 
+              <ul title="Ratings" class="list-inline ratings text-center">
+                  <li><a href="#"><span class="glyphicon glyphicon-star"></span></a></li>
+                  <li><a href="#"><span class="glyphicon glyphicon-star"></span></a></li>
+                  <li><a href="#"><span class="glyphicon glyphicon-star"></span></a></li>
+                  <li><a href="#"><span class="glyphicon glyphicon-star"></span></a></li>
+                  <li><a href="#"><span class="glyphicon glyphicon-star"></span></a></li>
+              </ul>
+          </div>
+          <div class="col-md-6">
+              <strong>Information</strong><br>
+              <div class="table-responsive">
+              <table class="table table-user-information">
+                  <tbody>
+                      <tr>        
+                          <td>
+                              <strong>
+                                  <span class="glyphicon glyphicon-asterisk text-primary"></span>
+                                  Identificacion                                                
+                              </strong>
+                          </td>
+                          <td class="text-primary">
+                              123456789     
+                          </td>
+                      </tr>
+                      <tr>    
+                          <td>
+                              <strong>
+                                  <span class="glyphicon glyphicon-user  text-primary"></span>    
+                                  Name                                                
+                              </strong>
+                          </td>
+                          <td class="text-primary">
+                            {{ user.lastname }}   
+                          </td>
+                      </tr>
+                      <tr>        
+                          <td>
+                              <strong>
+                                  <span class="glyphicon glyphicon-cloud text-primary"></span>  
+                                  Lastname                                                
+                              </strong>
+                          </td>
+                          <td class="text-primary">
+                            {{ user.lastname }}
+                          </td>
+                      </tr>
+  
+                      <tr>        
+                          <td>
+                              <strong>
+                                  <span class="glyphicon glyphicon-bookmark text-primary"></span> 
+                                  Username                                                
+                              </strong>
+                          </td>
+                          <td class="text-primary">
+                            {{ user.email }}
+                          </td>
+                      </tr>
+  
+  
+                      <tr>        
+                          <td>
+                              <strong>
+                                  <span class="glyphicon glyphicon-eye-open text-primary"></span> 
+                                  Role                                                
+                              </strong>
+                          </td>
+                          <td class="text-primary">
+                            {{ user.gender }}
+                          </td>
+                      </tr>
+                      <tr>        
+                          <td>
+                              <strong>
+                                  <span class="glyphicon glyphicon-envelope text-primary"></span> 
+                                  Email                                                
+                              </strong>
+                          </td>
+                          <td class="text-primary">
+                            {{ user.email }}
+                          </td>
+                      </tr>
+                      <tr>        
+                          <td>
+                              <strong>
+                                  <span class="glyphicon glyphicon-calendar text-primary"></span>
+                                  created                                                
+                              </strong>
+                          </td>
+                          <td class="text-primary">
+                              20 jul 20014
+                          </td>
+                      </tr>
+                      <tr>        
+                          <td>
+                              <strong>
+                                  <span class="glyphicon glyphicon-calendar text-primary"></span>
+                                  Modified                                                
+                              </strong>
+                          </td>
+                          <td class="text-primary">
+                               20 jul 20014 20:00:00
+                          </td>
+                      </tr>                                    
+                  </tbody>
+              </table>
+              </div>
+              <div class="bt-1">
+                <a   routerLink="/modifyaccount/{{ user._id }}"
+                 class="btn btn-default">Edit account</a>
+              </div>
+          </div>
+      </div>
+  </div>
+  </div>                       
+<br />
+
+<br />
+<br />
+
+<h4
+  style="
+    text-align: center;
+    color: rgba(156, 7, 99, 0.747);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 22px;
+  "
+>
+  Here are your Posts
+</h4>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
+<div class="container blog-page">
+  <div class="row clearfix">
+
+    <div *ngFor="let item of posts" class="col-lg-4 col-md-6 col-sm-12">
+      <div class="card single_post">
+
+        <div class="body">
+          <div class="img-post m-b-15">
+            <img [src]="'http://127.0.0.1:3000/getimage/'+ item.image" style="margin-top:5px" alt="Table Setting" class="img-fluid">
+            <div class="header">
+              <h2><strong>{{item.title}}</strong></h2>
+            </div>
+          </div>
+          <p>{{item.description}}</p>
+          <button routerLink="/modify/{{ item._id }}"
+            type="button"
+            style="
+              margin-right: 15px;
+              height: 25px;
+              background-color: rgb(37, 34, 241);
+              padding-top: 1px;
+            "
+            class="btn">
+            <p style="color: white; font-size: 13px">Edit</p>
+          </button>
+          <button (click)="delete(item._id)" style="border: 0em; background-color: white">
+            <svg style="color: red" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+              class="bi bi-trash" viewBox="0 0 16 16">
+              <path
+                d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />
+              <path fill-rule="evenodd"
+                d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" />
+            </svg>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>

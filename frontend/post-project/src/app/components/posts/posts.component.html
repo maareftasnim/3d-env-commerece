@@ -1,0 +1,41 @@
+<br>
+<br>
+<br>
+<br>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <div class="d-flex flex-row align-items-center mb-4">
+        <div class="form-outline flex-fill mb-0">
+          <input [(ngModel)]="searchtitle"
+                 (input)="search()" 
+                 style="width: 100%; border-width: 2px; border-color: rgb(130, 130, 133);"
+                 class="form-control" placeholder="Search post by title" />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
+<div class="container blog-page">
+  <div class="row">
+    <div *ngFor="let item of posts" class="col-lg-4 col-md-6">
+      <div class="card single_post">
+        <div class="body">
+          <div class="img-post m-b-15">
+            <img [src]="'http://127.0.0.1:3000/getimage/'+ item.image" style="margin-top:5px" alt="Table Setting" class="img-fluid">
+            <div class="header">
+              <h2><strong>{{item.title}}</strong></h2>
+            </div>
+          </div>
+          <p>{{item.description}}</p>
+          <button class="btn btn-primary" [routerLink]="['/post-details', item._id]">View Details</button>
+          <button class="btn btn-danger" [routerLink]="'/addToCart'">Add To Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<img style="margin-left: 300px;" width="900px" height="300px" src="./assets/images/pal.png"  />

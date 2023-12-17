@@ -1,0 +1,71 @@
+
+<section class="vh-100" style=" background-color: #ffffff;">
+  <div style="width: 1000px; margin-top: 50px;" class="container h-100">
+    <div class="row d-flex justify-content-center align-items-center h-80">
+      <div class="col-lg-12 col-xl-11">
+        <div class="card text-black" style="border-radius: 25px;">
+          <div class="card-body p-md-5">
+            <div class="row justify-content-center">
+              <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+
+                <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4" style="color: #085880; font-family: Georgia, 'Times New Roman', Times, serif; font-size : 20px" >Add new Post</p>
+                    <form class="mx-1 mx-md-4" method="post">
+
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+
+                     <label for="username" >Title</label>
+                     <i class="fa-solid fa-user"></i>
+                    <input [(ngModel)]="post.title" class="form-control" placeholder="enter title" type="text" id="email" name="email" />
+                    </div>
+                  </div>
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                     <label for="password">Image</label>
+                     <i class="fa-solid fa-user"></i>
+                    <input  (change)="select($event)" class="form-control" type="file" id="password" name="_password"/>
+                    </div>
+                  </div>
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                     <label for="password">Description</label>
+                     <i class="fa-solid fa-user"></i>
+                    <textarea  [(ngModel)]="post.description" placeholder="descrption" class="form-control" type="text" id="text" name="_password"></textarea>
+                    </div>
+                  </div>
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                     <label for="password"> Qrcode</label>
+                     <i class="fa-solid fa-user"></i>
+                    <input  (change)="select1($event)" class="form-control" type="file" id="password" name="_password"/>
+                    </div>
+                  </div>
+                  <div  *ngIf="!success" class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                    <button (click)="makePayement(10)" class="btn">Add</button>
+                  </div>
+                  <div *ngIf="success" class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                    <button  (click)="create()" class="btn">Add</button>
+                  </div>
+
+                </form>
+
+              </div>
+              <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
+
+                <img src="./assets/add.jpg"
+                  class="img-fluid" alt="Sample image">
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<img style="margin-left: 300px;" width="1200px" height="200px" src="./assets/images/pal.png"  />

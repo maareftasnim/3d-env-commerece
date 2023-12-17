@@ -1,0 +1,121 @@
+<br />
+<section class="vh-100" style="background-color: #ffffff">
+  <div class="container h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-lg-12 col-xl-11">
+        <div class="card text-black" style="border-radius: 25px">
+          <div class="card-body p-md-5">
+            <div class="row justify-content-center">
+              <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+                <h3
+                  class="text-center h3 fw-bold mb-5 mx-1 mx-md-4 mt-4"
+                  style="
+                    color: #085880;
+                    font-family: Georgia, 'Times New Roman', Times, serif;
+                  "
+                >
+                  Edit your profile
+                </h3>
+                <form [formGroup]="editprofile"class="mx-1 mx-md-4" method="post">
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <div class="form-outline flex-fill mb-0">
+                      <label for="username">E-mail</label>
+                      <input
+                      formControlName="email"
+
+                        class="form-control"
+                        style="margin-top: 1px"
+                        type="email"
+                        id="email"
+                        name="email"
+                      />
+                    </div>
+                  </div>
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <div class="form-outline flex-fill mb-0">
+                      <label for="username" style="margin-top: -2px"
+                        >Firstname</label
+                      >
+                      <input
+                      formControlName="firstname"
+
+                        class="form-control"
+                        type="text"
+                      />
+                    </div>
+                  </div>
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <div class="form-outline flex-fill mb-0">
+                      <label for="username" style="margin-top: -2px"
+                        >Lastname</label
+                      >
+                      <input
+                        formControlName="lastname"
+                        class="form-control"
+                        type="text"
+                      />
+                    </div>
+                  </div>
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <div class="form-outline flex-fill mb-0">
+                      <label for="username">Image</label>
+                      <input
+                        class="form-control"
+                        (change)="select($event)"
+                        style="margin-top: 1px"
+                        type="file"
+                        id="email"
+                        name="email"
+                      />
+                    </div>
+                  </div>
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <div class="form-outline flex-fill mb-0">
+                      <label for="username" style="margin-top: -2px"
+                        >Age : +15 years</label
+                      >
+                      <input
+                        formControlName="age"
+                        class="form-control"
+                        type="number"
+                        min="15"
+                        max="80"
+                      />
+                    </div>
+                  </div>
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <div class="form-outline flex-fill mb-0">
+                      <label for="username" style="margin-top: -2px"
+                        >Gender</label
+                      >
+                      <input
+                        formControlName="gender"
+                        class="form-control"
+                        type="text"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                    <button  (click)="onSubmit()" class="btn">Edit profile</button>
+                  </div>
+                </form>
+              </div>
+              <div
+                class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2"
+              >
+                <br />
+                <img
+                  style="margin-left: 50px"
+                  class="rounded"
+                  src="./assets/prof.jpg"
+                  alt="Sample image"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

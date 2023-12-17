@@ -1,0 +1,8 @@
+/backend/node_modules
+/frontend/post-project/node_modules
+
+/frontend/post-project/.vscode
+/backend/uploads
+
+
+/frontend/post-project/.angular
